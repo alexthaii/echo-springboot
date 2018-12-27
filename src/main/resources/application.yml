@@ -1,5 +1,8 @@
 feign:
   hystrix:
     enabled: true
-  url: chamber-demo-dop-service
-  name: chamber-demo-dop-service
+  url: chamber-springboot
+  name: chamber-springboot
+
+server:
+  port: 8080
