@@ -1,0 +1,1 @@
+myProtoPipeline(url: 'https://github.com/alexthaii/echo-springboot.git')
