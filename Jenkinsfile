@@ -1,1 +1,13 @@
-myProtoPipeline(url: 'https://github.com/alexthaii/echo-springboot.git')
+pipeline {
+  agent any
+  stages {
+    stage ("Build") {
+      tools {
+        maven 'M3'
+      }
+      steps {
+        sh 'mvn --version'
+      }
+    }
+  }
+}
