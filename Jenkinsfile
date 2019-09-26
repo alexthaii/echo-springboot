@@ -7,8 +7,13 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
-        logstashSend failBuild: false, maxLines: 1000
       }
+    }
+  }
+
+  post {
+    always {
+      logstashSend failBuild: false, maxLines: 1000
     }
   }
 }
