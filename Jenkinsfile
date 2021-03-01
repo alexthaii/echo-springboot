@@ -10,10 +10,4 @@ pipeline {
       }
     }
   }
-
-  post {
-    always {
-      logstashSend failBuild: false, maxLines: 1000
-    }
-  }
 }
