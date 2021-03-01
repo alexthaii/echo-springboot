@@ -6,7 +6,7 @@ pipeline {
         maven 'M3'
       }
       steps {
-        sh 'mn --version'
+        sh 'mvn --version'
       }
     }
   }
