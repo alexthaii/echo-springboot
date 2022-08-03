@@ -14,10 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag axtacr.azurecr.io/echo-springboot:latest
-    
+
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
       with:
@@ -27,9 +24,9 @@ jobs:
         password: ${{ secrets.ACR_PW }}
         # Container registry server url
         login-server: axtacr.azurecr.io
-    
+
     - name: Build & Push
       uses: docker/build-push-action@v2
       with:
         push: true
-        run: docker push axtacr.azurecr.io/echo-springboot:latest
+        tags: axtacr.azurecr.io/echo-springboot:latest
