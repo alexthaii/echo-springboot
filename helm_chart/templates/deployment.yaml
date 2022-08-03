@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: echo
-        image: alexthaii/echo-springboot:latest
+        image: alexthaii/echo-springboot:1.0.0
         ports:
         - containerPort: 8080
         imagePullPolicy: Always

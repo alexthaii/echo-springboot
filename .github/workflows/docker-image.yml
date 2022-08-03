@@ -29,4 +29,4 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: axtacr.azurecr.io/echo-springboot:latest
+        tags: axtacr.azurecr.io/echo-springboot:1.0.0
