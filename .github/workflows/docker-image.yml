@@ -24,6 +24,6 @@ jobs:
         # Container registry username
         username: axtacr
         # Container registry password
-        password: # default is 
+        password: ${{ secrets.ACR_PW }}
         # Container registry server url
         login-server: axtacr.azurecr.io
