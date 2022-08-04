@@ -33,21 +33,25 @@ jobs:
           ]
         plugins: |
           ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', '@semantic-release/npm', '@semantic-release/github']
+        tag_format: "${version}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build & Push
       uses: docker/build-push-action@v2
+      if: steps.semantic.outputs.new-release-published == 'true'
       with:
         push: true
         tags: axtacr.azurecr.io/echo-springboot:${{ steps.semantic.outputs.release-version }}
 
     - name: Update Version
+      if: steps.semantic.outputs.new-release-published == 'true'
       run: |
           version=$(cat ./helm_chart/values.yaml | grep tag: | awk '{print $2}')
           sed -i "s/$version/${{ steps.semantic.outputs.release-version }}/" ./helm_chart/values.yaml
 
     - name: Commit and push changes
+      if: steps.semantic.outputs.new-release-published == 'true'
       uses: devops-infra/action-commit-push@v0.3
       with:
         github_token: ${{ secrets.GH_TOKEN }}
