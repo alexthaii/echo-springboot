@@ -8,7 +8,7 @@ image:
   repository: axtacr.azurecr.io/echo-springboot
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 1.7.0-release-candidates.1
+  tag: 1.7.0-release-candidates.2
 
 imagePullSecrets: []
 nameOverride: ""
