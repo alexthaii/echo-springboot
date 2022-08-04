@@ -30,7 +30,6 @@ jobs:
     - name: Perform semantic-release
       uses: codfish/semantic-release-action@v1
       with:
-        private: true
         branches: |
           [
             'master'
