@@ -44,13 +44,13 @@ jobs:
       if: env.NEW_RELEASE_PUBLISHED == 'true'
       with:
         push: true
-        tags: axtacr.azurecr.io/echo-springboot:${{ steps.semantic.outputs.release-version }}
+        tags: axtacr.azurecr.io/echo-springboot:${{ env.RELEASE_VERSION }}
 
     - name: Update Version
       if: env.NEW_RELEASE_PUBLISHED == 'true'
       run: |
           version=$(cat ./helm_chart/values.yaml | grep tag: | awk '{print $2}')
-          sed -i "s/$version/${{ steps.semantic.outputs.release-version }}/" ./helm_chart/values.yaml
+          sed -i "s/$version/${{ env.RELEASE_VERSION }}/" ./helm_chart/values.yaml
 
     - name: Commit and push changes
       if: env.NEW_RELEASE_PUBLISHED == 'true'
