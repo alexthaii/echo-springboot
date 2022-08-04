@@ -1,4 +1,5 @@
 {
     "name": "echo-springboot",
-    "private": true
+    "private": true,
+    "version": "1.5.0"
 }
