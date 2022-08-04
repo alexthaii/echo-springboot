@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: echo
-        image: axtacr.azurecr.io/echo-springboot:1.0.0
+        image: axtacr.azurecr.io/echo-springboot:1.1.0
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
