@@ -32,3 +32,14 @@ jobs:
       with:
         push: true
         tags: axtacr.azurecr.io/echo-springboot:1.2.0
+
+    - name: Update Version
+      run: |
+          version=$(cat ./helm-chart/values.yaml | grep tag: | awk '{print $2}')
+          sed -i "s/$version/1.2.0/" ./helm-chart/values.yaml
+
+    - name: Commit and push changes
+      uses: devops-infra/action-commit-push@v0.3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        commit_message: Version updated

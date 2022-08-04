@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: echo
-        image: axtacr.azurecr.io/echo-springboot:1.1.0
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
