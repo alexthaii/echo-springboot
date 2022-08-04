@@ -28,7 +28,7 @@ jobs:
         login-server: axtacr.azurecr.io
 
     - name: Perform semantic-release
-      run: codfish/semantic-release-action@v1
+      uses: codfish/semantic-release-action@v1
       with:
         private: true
         branches: |
