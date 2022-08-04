@@ -42,7 +42,6 @@ jobs:
               name: 'release-candidates',
               prerelease: true
             }
-            'release-candidates'
           ]
         plugins: |
           ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', '@semantic-release/npm', '@semantic-release/github']
