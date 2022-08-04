@@ -37,7 +37,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - run: echo $NEW_RELEASE_PUBLISHED
+    - run: echo ${{steps.semantic.outputs.new-release-published }}
 
     - name: Build & Push
       uses: docker/build-push-action@v2
