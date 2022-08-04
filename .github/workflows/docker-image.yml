@@ -2,11 +2,19 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ 
+                "master",
+                "release-candidates",
+                "develop"
+              ]
     paths-ignore:
       - "helm_chart"
   pull_request:
-    branches: [ "master" ]
+    branches: [ 
+                "master",
+                "release-candidates",
+                "develop"
+              ]
 
 jobs:
   build:
@@ -29,7 +37,12 @@ jobs:
       with:
         branches: |
           [
-            'master'
+            'master',
+            {
+              name: 'release-candidates',
+              prerelease: true
+            }
+            'release-candidates'
           ]
         plugins: |
           ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', '@semantic-release/npm', '@semantic-release/github']
