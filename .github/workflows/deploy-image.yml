@@ -1,12 +1,14 @@
 name: Deploy Docker Image
 on:
   workflow_dispatch:
+    inputs:
       environment:
         type: environment
         description: Select the environment
         required: true
       tags:
         description: "The tags"
+        required: false
 
 jobs:
   deploy:
