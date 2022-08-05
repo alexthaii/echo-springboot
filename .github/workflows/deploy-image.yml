@@ -6,13 +6,10 @@ on:
         type: environment
         description: Select the environment
         required: true
-      tags:
-        description: "The tags"
-        required: false
 
 jobs:
-  deploy:
+  get_tags:
     runs-on: ubuntu-latest
     environment: PROD
     steps:
-    - uses: actions/checkout@v3
+      - run: git tag -l --sort=-version:refname | grep -wv "release"
