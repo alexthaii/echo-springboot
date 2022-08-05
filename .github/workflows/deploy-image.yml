@@ -1,22 +1,16 @@
 name: Deploy Docker Image
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        type: choice
-        required: true
-        description: yes
-        options:
-          - DEV
-          - QA
-          - PROD
       environment:
         type: environment
         description: Select the environment
         required: true
+      tags:
+        description: "The tags"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: PROD
     steps:
     - uses: actions/checkout@v3
