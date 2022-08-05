@@ -6,6 +6,10 @@ on:
         type: environment
         description: Select the environment
         required: true
+        options:
+          - DEV
+          - QA
+          - PROD
 
 jobs:
   deploy:
