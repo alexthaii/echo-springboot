@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     environment: PROD
     steps:
-      - run: git tag -l --sort=-version:refname | grep -wv "release"
+      - run: echo "hi"
