@@ -11,6 +11,6 @@ If its buddy application *chamber-springboot* is running, the message will be ec
 #### Notes:
 To communicate with echo's buddy service: *chamber-springboot* in Kubernetes, you need to create a Service object called `chamber-springboot` for the chamber-springboot application.
 
-You can modify the name of the service that echo-springboot is looking for by looking at `src/main/resources/application.yml` 
+You can modify the name of the service that echo-springboot is looking for by looking at `src/main/resources/a pplication.yml` 
  
   
