@@ -13,3 +13,4 @@ To communicate with echo's buddy service: *chamber-springboot* in Kubernetes, yo
 
 You can modify the name of the service that echo-springboot is looking for by looking at `src/main/resources/application.yml` 
  
+  
